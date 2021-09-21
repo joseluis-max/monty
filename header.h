@@ -30,4 +30,17 @@ typedef struct instruction_s
 } instruction_t;
 #include <stdio.h>
 #include <stdlib.h>
+#include <ctype.h>
+#include <string.h>
+#include <aio.h>
+char **trim(char *s);
+int _strcmp(char *s1, char *s2);
+void _push(stack_t **stack __attribute__((unused)), unsigned int num __attribute__((unused)));
+void _pall(stack_t **stack __attribute__((unused)), unsigned int num __attribute__((unused)));
+void _pint(stack_t **stack __attribute__((unused)), unsigned int num __attribute__((unused)));
+void _pop(stack_t **stack __attribute__((unused)), unsigned int num __attribute__((unused)));
+void _swap(stack_t **stack __attribute__((unused)), unsigned int num __attribute__((unused)));
+void _add(stack_t **stack __attribute__((unused)), unsigned int num __attribute__((unused)));
+void _nop(stack_t **stack __attribute__((unused)), unsigned int num __attribute__((unused)));
+
 #endif /* header.h */
