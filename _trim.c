@@ -1,7 +1,7 @@
-#include "header.h"
+#include "monty.h"
 /**
  * trim - delete spaces in a string
- * @str: string for clean
+ * @s: string for clean
  * Return: string without spaces
  */
 char **trim(char *s)

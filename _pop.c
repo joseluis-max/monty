@@ -1,19 +1,15 @@
-#include "header.h"
+#include "monty.h"
 /**
- * pop - pop
- * @stack:
- * @num:
+ * _pop - pop
+ * @stack: pointer to double linked list
+ * @line_number: current line number
  */
-void _pop(stack_t **stack __attribute__((unused)), unsigned int num __attribute__((unused)))
+void _pop(stack_t **stack, unsigned int line_number __attribute__((unused)))
 {
 	stack_t *tmp;
 
 	if (*stack == NULL)
-	{
-		printf("L<line_number>: can't pop an empty stack\n");
-		exit(EXIT_FAILURE);
-	}
-
+		_print_error("can't pop an empty stack", line_number);
 	tmp = *stack;
 	(*stack) = (*stack)->next;
 	if (*stack != NULL)

@@ -1,14 +1,19 @@
-#include "header.h"
+#include "monty.h"
 /**
- * push - push a item in stack or queue
- * @
- * @
- * Return:
+ * _push - push a item in stack or queue
+ * @stack: pointer to double linked list
+ * @line_number: current line number
  */
-void _push(stack_t **stack __attribute__((unused)), unsigned int num __attribute__((unused)))
+void _push(stack_t **stack, unsigned int line_number __attribute__((unused)))
 {
 	stack_t *node;
-	
+	unsigned int n;
+
+	if (num == NULL)
+		_print_error("push integer", line_number);
+	n = (unsigned int)atoi(num);
+	if (isdigit(n) || !n)
+		_print_error("push integer", line_number);
 	if (stack == NULL)
 		exit(EXIT_FAILURE);
 	node = malloc(sizeof(stack_t));
@@ -17,7 +22,7 @@ void _push(stack_t **stack __attribute__((unused)), unsigned int num __attribute
 		free(node);
 		exit(EXIT_FAILURE);
 	}
-	node->n = num;
+	node->n = n;
 	node->prev = NULL;
 	node->next = NULL;
 

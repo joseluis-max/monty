@@ -1,9 +1,10 @@
-#include "header.h"
+#include "monty.h"
 /**
- * pall - print all stack
- * @stack: stack
+ * _pall - print all stack
+ * @stack: pointer to double linked list
+ * @line_number: current line number
  */
-void _pall(stack_t **stack __attribute__((unused)), unsigned int num __attribute__((unused)))
+void _pall(stack_t **stack, unsigned int line_number __attribute__((unused)))
 {
 	stack_t *copy = *stack;
 

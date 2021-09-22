@@ -1,17 +1,14 @@
-#include "header.h"
+#include "monty.h"
 /**
- * swap - interchanges
- * @stack:
- * @num:
+ * _swap - interchanges
+ * @stack: pointer to double linked list
+ * @line_number: current line number
  */
-void _swap(stack_t **stack __attribute__((unused)), unsigned int num __attribute__((unused)))
+void _swap(stack_t **stack, unsigned int line_number __attribute__((unused)))
 {	stack_t *tmp = *stack;
 
 	if ((*stack)->next == NULL)
-	{
-		printf("L<line_number>: can't swap, stack too short");
-		exit(EXIT_FAILURE);
-	}
+		_print_error("can't swap, stack too short", line_number);
 	*(stack) = (*stack)->next;
 	tmp->next = (*stack)->next;
 	(*stack)->next = tmp;
