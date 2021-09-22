@@ -1,6 +1,6 @@
 #include "monty.h"
 /**
- * nop - no operation
+ * _nop - no operation
  * @stack: pointer to double linked list
  * @line_number: current line number
  */

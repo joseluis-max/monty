@@ -1,8 +1,8 @@
 #include "monty.h"
 /**
- * pop - pop
+ * _pop - pop
  * @stack: pointer to double linked list
- * @line_nuber: current line number
+ * @line_number: current line number
  */
 void _pop(stack_t **stack, unsigned int line_number __attribute__((unused)))
 {

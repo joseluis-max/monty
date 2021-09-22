@@ -1,8 +1,8 @@
 #include "monty.h"
 /**
- * add - add two nodes
- * @stack:
- * @num:
+ * _add - add two nodes
+ * @stack: pointer to double linked list
+ * @line_number: current line number
  */
 void _add(stack_t **stack, unsigned int line_number __attribute__((unused)))
 {

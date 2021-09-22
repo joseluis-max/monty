@@ -1,8 +1,8 @@
 #include "monty.h"
 /**
- * swap - interchanges
+ * _swap - interchanges
  * @stack: pointer to double linked list
- * @line_nuber: current line number
+ * @line_number: current line number
  */
 void _swap(stack_t **stack, unsigned int line_number __attribute__((unused)))
 {	stack_t *tmp = *stack;

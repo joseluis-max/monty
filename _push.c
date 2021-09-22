@@ -1,15 +1,15 @@
 #include "monty.h"
 /**
- * push - push a item in stack or queue
+ * _push - push a item in stack or queue
  * @stack: pointer to double linked list
- * @line_nuber: current line number
+ * @line_number: current line number
  */
 void _push(stack_t **stack, unsigned int line_number __attribute__((unused)))
 {
 	stack_t *node;
 	unsigned int n;
 
-        if (num == NULL)
+	if (num == NULL)
 		_print_error("push integer", line_number);
 	n = (unsigned int)atoi(num);
 	if (isdigit(n) || !n)

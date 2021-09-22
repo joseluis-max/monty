@@ -2,7 +2,7 @@
 /**
  * _pint - print top element in the stack
  * @stack: pointer to double linked list
- * @line_nuber: current line number
+ * @line_number: current line number
  */
 void _pint(stack_t **stack, unsigned int line_number __attribute__((unused)))
 {
