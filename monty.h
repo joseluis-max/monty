@@ -1,5 +1,6 @@
-#ifndef _HEADER_H_
-#define _HEADER_H_
+#ifndef _MONTY_H_
+#define _MONTY_H_
+#define  _GNU_SOURCE
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)
  * @n: integer
@@ -33,14 +34,20 @@ typedef struct instruction_s
 #include <ctype.h>
 #include <string.h>
 #include <aio.h>
+#include <unistd.h>
+extern char *num;
 char **trim(char *s);
+void _print_error(char *msg, unsigned int line);
 int _strcmp(char *s1, char *s2);
-void _push(stack_t **stack __attribute__((unused)), unsigned int num __attribute__((unused)));
-void _pall(stack_t **stack __attribute__((unused)), unsigned int num __attribute__((unused)));
-void _pint(stack_t **stack __attribute__((unused)), unsigned int num __attribute__((unused)));
-void _pop(stack_t **stack __attribute__((unused)), unsigned int num __attribute__((unused)));
-void _swap(stack_t **stack __attribute__((unused)), unsigned int num __attribute__((unused)));
-void _add(stack_t **stack __attribute__((unused)), unsigned int num __attribute__((unused)));
-void _nop(stack_t **stack __attribute__((unused)), unsigned int num __attribute__((unused)));
+char *_integer_to_string(int n);
+void _free_stack(stack_t *stack);
+void _print_error_unknown(char *msg, int line, char *operation);
+void _push(stack_t **stack, unsigned int line_number __attribute__((unused)));
+void _pall(stack_t **stack, unsigned int line_number __attribute__((unused)));
+void _pint(stack_t **stack , unsigned int line_number __attribute__((unused)));
+void _pop(stack_t **stack, unsigned int line_number __attribute__((unused)));
+void _swap(stack_t **stack, unsigned int line_number __attribute__((unused)));
+void _add(stack_t **stack, unsigned int line_number __attribute__((unused)));
+void _nop(stack_t **stack, unsigned int line_number __attribute__((unused)));
 
-#endif /* header.h */
+#endif /* monty.h */

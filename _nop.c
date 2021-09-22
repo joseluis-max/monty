@@ -1,10 +1,10 @@
-#include "header.h"
+#include "monty.h"
 /**
  * nop - no operation
- * @stack:
- * @num:
+ * @stack: pointer to double linked list
+ * @line_number: current line number
  */
-void _nop(stack_t **stack __attribute__((unused)), unsigned int num __attribute__((unused)))
+void _nop(stack_t **stack, unsigned int line_number __attribute__((unused)))
 {
-	return;
+	(void)stack;
 }

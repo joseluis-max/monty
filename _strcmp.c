@@ -1,4 +1,4 @@
-#include "header.h"
+#include "monty.h"
 /**
  * _strcmp - compare two string
  * @s1: string

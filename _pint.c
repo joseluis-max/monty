@@ -1,15 +1,12 @@
-#include "header.h"
+#include "monty.h"
 /**
  * _pint - print top element in the stack
- * @stack:
- * @num:
+ * @stack: pointer to double linked list
+ * @line_nuber: current line number
  */
-void _pint(stack_t **stack __attribute__((unused)), unsigned int num __attribute__((unused)))
+void _pint(stack_t **stack, unsigned int line_number __attribute__((unused)))
 {
 	if (*stack == NULL)
-	{
-		printf("L<line_number>: can't pint, stack empty\n");
-		exit(EXIT_FAILURE);
-	}
+		_print_error("can't pint, stack empty", line_number);
 	printf("%d\n", (*stack)->n);
 }
