@@ -8,12 +8,29 @@ void _push(stack_t **stack, unsigned int line_number __attribute__((unused)))
 {
 	stack_t *node;
 	unsigned int n;
+	int i = 0;
 
 	if (num == NULL)
-		_print_error("push integer", line_number);
-	n = (unsigned int)atoi(num);
-	if (isdigit(n) || !n)
-		_print_error("push integer", line_number);
+	{
+		_free_stack(*stack);
+		free(tokens);
+		free(line);
+		fclose(stream);
+		_print_error(": usage: push integer", line_number);
+	}
+	while (num[i] != '\0')
+	{
+		if (isdigit(num[i]) == 0 && num[0] !=  '-')
+		{
+			_free_stack(*stack);
+			free(tokens);
+			free(line);
+			fclose(stream);
+			_print_error(": usage: push integer", line_number);
+		}
+		i++;
+	}
+	n = atoi(num);
 	if (stack == NULL)
 		exit(EXIT_FAILURE);
 	node = malloc(sizeof(stack_t));
