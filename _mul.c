@@ -1,10 +1,10 @@
 #include "monty.h"
 /**
- * _add - add two nodes
+ * _mul - mul two nodes
  * @stack: pointer to double linked list
  * @line_number: current line number
  */
-void _add(stack_t **stack, unsigned int line_number __attribute__((unused)))
+void _mul(stack_t **stack, unsigned int line_number __attribute__((unused)))
 {
 	stack_t *copy = (*stack)->next;
 	stack_t *tmp = *stack;
@@ -15,9 +15,9 @@ void _add(stack_t **stack, unsigned int line_number __attribute__((unused)))
 		free(tokens);
 		free(line);
 		fclose(stream);
-		_print_error(": can't add, stack too short", line_number);
+		_print_error(": can't mul, stack too short", line_number);
 	}
-	copy->n = (*stack)->n + copy->n;
+	copy->n = copy->n * (*stack)->n;
 	copy->prev = NULL;
 	*stack = copy;
 	free(tmp);

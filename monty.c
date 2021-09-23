@@ -1,5 +1,8 @@
 #include "monty.h"
+char **tokens;
 char *num;
+FILE *stream;
+char *line = NULL;
 /**
  * _print_error_file - print error file
  * @file: file name
@@ -9,11 +12,12 @@ void _print_error_file(char *file)
 	write(STDERR_FILENO, "Error: Can't open file ", 24);
 	write(STDERR_FILENO, file, strlen(file));
 	write(STDERR_FILENO, "\n", 1);
+	fclose(stream);
 	exit(EXIT_FAILURE);
 }
 /**
  * find_operation - macth command and operation
- * @line: current line content
+ * @line_counter: current line content
  * @line_counter: curren line number
  * @stack: header of double linked list
  * @command: operation
@@ -31,6 +35,14 @@ int find_operation(int line_counter, stack_t **stack, char *command)
 		{"swap", _swap},
 		{"add", _add},
 		{"nop", _nop},
+		{"sub", _sub},
+		{"div", _div},
+		{"mul", _mul},
+		{"mod", _mod},
+		{"pchar", _pchar},
+		{"pstr", _pstr},
+		{"rotl", _rotl},
+		{"rotr", _rotr},
 		{NULL, NULL}
 	};
 
@@ -54,12 +66,9 @@ int find_operation(int line_counter, stack_t **stack, char *command)
  */
 int main(int argc, char *argv[])
 {
-	FILE *stream;
-	char *line = NULL;
 	size_t len = 0;
 	ssize_t nread;
 	int status = 0, line_counter = 1;
-	char **tokens;
 	stack_t *stack = NULL;
 
 	if (argc > 2 || argc < 2)
@@ -74,9 +83,15 @@ int main(int argc, char *argv[])
 	{
 		tokens = trim(line);
 		num = tokens[1];
+		if (strcmp(tokens[0], "#") == 0 || strncmp(tokens[0], "#", 1) == 0)
+			continue;
 		status = find_operation(line_counter, &stack, tokens[0]);
 		if (status == 0)
+		{
+			_free_stack(stack);
+			fclose(stream);
 			_print_error_unknown("unknown instruction", line_counter, tokens[0]);
+		}
 		line_counter++;
 		free(tokens);
 	}

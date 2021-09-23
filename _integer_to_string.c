@@ -19,7 +19,7 @@ char *_integer_to_string(int n)
 		div *= 10;
 		digit++;
 	}
-	buffer = malloc(sizeof(char) * digit);
+	buffer = malloc(sizeof(char) * digit + 1);
 	while (div > 0)
 	{
 		buffer[i] = '0' + (num / div);

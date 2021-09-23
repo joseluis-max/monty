@@ -35,13 +35,16 @@ typedef struct instruction_s
 #include <string.h>
 #include <aio.h>
 #include <unistd.h>
+extern FILE *stream;
+extern char *line;
+extern char **tokens;
 extern char *num;
 char **trim(char *s);
 void _print_error(char *msg, unsigned int line);
 int _strcmp(char *s1, char *s2);
 char *_integer_to_string(int n);
 void _free_stack(stack_t *stack);
-void _print_error_unknown(char *msg, int line, char *operation);
+void _print_error_unknown(char *msg, int line_number, char *operation);
 void _push(stack_t **stack, unsigned int line_number __attribute__((unused)));
 void _pall(stack_t **stack, unsigned int line_number __attribute__((unused)));
 void _pint(stack_t **stack, unsigned int line_number __attribute__((unused)));
@@ -49,5 +52,13 @@ void _pop(stack_t **stack, unsigned int line_number __attribute__((unused)));
 void _swap(stack_t **stack, unsigned int line_number __attribute__((unused)));
 void _add(stack_t **stack, unsigned int line_number __attribute__((unused)));
 void _nop(stack_t **stack, unsigned int line_number __attribute__((unused)));
+void _sub(stack_t **stack, unsigned int line_number __attribute__((unused)));
+void _div(stack_t **stack, unsigned int line_number __attribute__((unused)));
+void _mul(stack_t **stack, unsigned int line_number __attribute__((unused)));
+void _mod(stack_t **stack, unsigned int line_number __attribute__((unused)));
+void _pchar(stack_t **stack, unsigned int line_number __attribute__((unused)));
+void _pstr(stack_t **stack, unsigned int line_number __attribute__((unused)));
+void _rotl(stack_t **stack, unsigned int line_number __attribute__((unused)));
+void _rotr(stack_t **stack, unsigned int line_number __attribute__((unused)));
 
 #endif /* monty.h */
