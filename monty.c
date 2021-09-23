@@ -82,6 +82,11 @@ int main(int argc, char *argv[])
 	while ((nread = getline(&line, &len, stream)) != -1)
 	{
 		tokens = trim(line);
+		if (tokens[0] == NULL)
+		{
+			free(tokens);
+			continue;
+		}
 		num = tokens[1];
 		if (strcmp(tokens[0], "#") == 0 || strncmp(tokens[0], "#", 1) == 0)
 		{
