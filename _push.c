@@ -24,14 +24,14 @@ void _push(stack_t **stack, unsigned int line_number __attribute__((unused)))
 	if (num == NULL)
 	{
 		_free(stack);
-		_print_error(":usage: push integer", line_number);
+		_print_error(": usage: push integer", line_number);
 	}
 	while (num[i] != '\0')
 	{
 		if (isdigit(num[i]) == 0 && num[0] !=  '-')
 		{
 			_free(stack);
-			_print_error(":usage: push integer", line_number);
+			_print_error(": usage: push integer", line_number);
 		}
 		i++;
 	}
