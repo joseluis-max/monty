@@ -15,7 +15,7 @@ void _print_error_unknown(char *msg, int line_number, char *operation)
 	write(STDERR_FILENO, str_line, strlen(str_line));
 	write(STDERR_FILENO, ": ", 2);
 	write(STDERR_FILENO, msg, strlen(msg));
-	write(STDERR_FILENO, ": ", 3);
+	write(STDERR_FILENO, " ", 1);
 	write(STDERR_FILENO, operation, strlen(operation));
 	write(STDERR_FILENO, "\n", 1);
 	free(str_line);
