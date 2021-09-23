@@ -83,7 +83,7 @@ int main(int argc, char *argv[])
 	{
 		line_counter++;
 		tokens = trim(line);
-		if (tokens[0] == NULL || tokens[2] != NULL)
+		if (tokens[0] == NULL)
 		{
 			free(tokens);
 			continue;
