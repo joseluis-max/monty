@@ -7,6 +7,7 @@
 void _pint(stack_t **stack, unsigned int line_number __attribute__((unused)))
 {
 	char *str;
+
 	if (*stack == NULL)
 	{
 		_free_stack(*stack);
