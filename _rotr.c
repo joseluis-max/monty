@@ -10,19 +10,11 @@ void _rotr(stack_t **stack, unsigned int line_number __attribute__((unused)))
 
 	if (stack == NULL || *stack == NULL)
 	{
-		_free_stack(*stack);
-		free(tokens);
-		free(line);
-		fclose(stream);
-		_print_error(": can't rotr, stack empty", line_number);
+		return;
 	}
 	if ((*stack)->next == NULL)
 	{
-		_free_stack(*stack);
-		free(tokens);
-		free(line);
-		fclose(stream);
-		_print_error(": can't rotr, stack too short", line_number);
+		return;
 	}
 
 	node = *stack;
