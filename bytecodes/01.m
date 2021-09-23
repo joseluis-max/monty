@@ -1,4 +1,2 @@
-push 1
-push 2
-push
-pall
+push 1 2 3 
+pall Holberton

@@ -82,7 +82,7 @@ int main(int argc, char *argv[])
 	while ((nread = getline(&line, &len, stream)) != -1)
 	{
 		tokens = trim(line);
-		if (tokens[0] == NULL)
+		if (tokens[0] == NULL || tokens[2] != NULL)
 		{
 			free(tokens);
 			continue;
