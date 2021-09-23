@@ -17,7 +17,7 @@ void _print_error_file(char *file)
 }
 /**
  * find_operation - macth command and operation
- * @line: current line content
+ * @line_counter: current line content
  * @line_counter: curren line number
  * @stack: header of double linked list
  * @command: operation
@@ -83,7 +83,7 @@ int main(int argc, char *argv[])
 	{
 		tokens = trim(line);
 		num = tokens[1];
-		if (strcmp(tokens[0], "#") == 0 || strncmp(tokens[0], "#", 1) == 0 )
+		if (strcmp(tokens[0], "#") == 0 || strncmp(tokens[0], "#", 1) == 0)
 			continue;
 		status = find_operation(line_counter, &stack, tokens[0]);
 		if (status == 0)

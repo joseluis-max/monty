@@ -2,7 +2,7 @@
 /**
  * _print_error_unknown - print error of command unknown
  * @msg: text message
- * @line: number line of error
+ * @line_number: number line of error
  * @operation: command don't found
  */
 void _print_error_unknown(char *msg, int line_number, char *operation)

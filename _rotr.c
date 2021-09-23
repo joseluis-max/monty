@@ -5,7 +5,7 @@
  * @line_number: current line number
  */
 void _rotr(stack_t **stack, unsigned int line_number __attribute__((unused)))
-{	
+{
 	stack_t *node;
 
 	if (stack == NULL || *stack == NULL)
@@ -14,7 +14,7 @@ void _rotr(stack_t **stack, unsigned int line_number __attribute__((unused)))
 		free(tokens);
 		free(line);
 		fclose(stream);
-                _print_error(": can't rotr, stack empty", line_number);
+		_print_error(": can't rotr, stack empty", line_number);
 	}
 	if ((*stack)->next == NULL)
 	{
@@ -22,15 +22,15 @@ void _rotr(stack_t **stack, unsigned int line_number __attribute__((unused)))
 		free(tokens);
 		free(line);
 		fclose(stream);
-                _print_error(": can't rotr, stack too short", line_number);
+		_print_error(": can't rotr, stack too short", line_number);
 	}
-	
-        node = *stack;
-        while(node->next)
+
+	node = *stack;
+	while (node->next)
 		node = node->next;
 	(*stack)->prev = node;
-        node->next = *stack;
-        node->prev->next = NULL;
-        node->prev = NULL;
-        *stack = node;
+	node->next = *stack;
+	node->prev->next = NULL;
+	node->prev = NULL;
+	*stack = node;
 }
