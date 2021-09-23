@@ -14,7 +14,7 @@ char **trim(char *s)
 	if (tokens == NULL)
 	{
 		free(tokens);
-		fprintf(STDERR_FILENO, "Error: malloc failed\n");
+		fprintf(stderr, "Error: malloc failed\n");
 		exit(EXIT_FAILURE);
 	}
 	token = strtok(s, " \n\r\t\a");

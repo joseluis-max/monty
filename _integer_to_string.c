@@ -22,7 +22,7 @@ char *_integer_to_string(int n)
 	buffer = malloc(sizeof(char) * digit + 1);
 	if (buffer == NULL)
 	{
-		fprintf(STDERR_FILENO, "Error: malloc failed\n");
+		fprintf(stderr, "Error: malloc failed\n");
 		free(buffer);
 		exit(EXIT_FAILURE);
 	}
