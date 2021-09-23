@@ -12,8 +12,8 @@ void _print_error_file(char *file)
 	write(STDERR_FILENO, "Error: Can't open file ", 24);
 	write(STDERR_FILENO, file, strlen(file));
 	write(STDERR_FILENO, "\n", 1);
-	fclose(stream);
-	exit(EXIT_FAILURE);
+	/* fclose(stream); */
+	exit(EXIT_FAILURE);	
 }
 /**
  * find_operation - macth command and operation
@@ -84,7 +84,10 @@ int main(int argc, char *argv[])
 		tokens = trim(line);
 		num = tokens[1];
 		if (strcmp(tokens[0], "#") == 0 || strncmp(tokens[0], "#", 1) == 0)
+		{
+			free(tokens);
 			continue;
+		}
 		status = find_operation(line_counter, &stack, tokens[0]);
 		if (status == 0)
 		{

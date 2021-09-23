@@ -13,7 +13,7 @@ void _print_error_unknown(char *msg, int line_number, char *operation)
 	str_line = _integer_to_string(line_number);
 	write(STDERR_FILENO, "L", 1);
 	write(STDERR_FILENO, str_line, strlen(str_line));
-	write(STDERR_FILENO, ": ", 3);
+	write(STDERR_FILENO, ": ", 2);
 	write(STDERR_FILENO, msg, strlen(msg));
 	write(STDERR_FILENO, ": ", 3);
 	write(STDERR_FILENO, operation, strlen(operation));
