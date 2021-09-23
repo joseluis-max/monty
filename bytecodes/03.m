@@ -1,4 +1,4 @@
-push 3 # hola
-push 4 # hola
-push 5#
-pall 
+push 1
+push     2
+
+push 

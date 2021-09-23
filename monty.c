@@ -68,7 +68,7 @@ int main(int argc, char *argv[])
 {
 	size_t len = 0;
 	ssize_t nread;
-	int status = 0, line_counter = 1;
+	int status = 0, line_counter = 0;
 	stack_t *stack = NULL;
 
 	if (argc > 2 || argc < 2)
@@ -81,6 +81,7 @@ int main(int argc, char *argv[])
 		_print_error_file(argv[1]);
 	while ((nread = getline(&line, &len, stream)) != -1)
 	{
+		line_counter++;
 		tokens = trim(line);
 		if (tokens[0] == NULL || tokens[2] != NULL)
 		{
@@ -100,7 +101,6 @@ int main(int argc, char *argv[])
 			fclose(stream);
 			_print_error_unknown("unknown instruction", line_counter, tokens[0]);
 		}
-		line_counter++;
 		free(tokens);
 	}
 	free(line);
