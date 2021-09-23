@@ -13,7 +13,7 @@ void _print_error_file(char *file)
 	write(STDERR_FILENO, file, strlen(file));
 	write(STDERR_FILENO, "\n", 1);
 	/* fclose(stream); */
-	exit(EXIT_FAILURE);	
+	exit(EXIT_FAILURE);
 }
 /**
  * find_operation - macth command and operation
