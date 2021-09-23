@@ -20,6 +20,12 @@ char *_integer_to_string(int n)
 		digit++;
 	}
 	buffer = malloc(sizeof(char) * digit + 1);
+	if (buffer == NULL)
+	{
+		fprintf(STDERR_FILENO, "Error: malloc failed\n");
+		free(buffer);
+		exit(EXIT_FAILURE);
+	}
 	while (div > 0)
 	{
 		buffer[i] = '0' + (num / div);

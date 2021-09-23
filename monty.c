@@ -73,7 +73,7 @@ int main(int argc, char *argv[])
 
 	if (argc > 2 || argc < 2)
 	{
-		write(STDERR_FILENO, "USAGE: monty file\n", 19);
+		write(STDERR_FILENO, "USAGE: monty file\n", 18);
 		exit(EXIT_FAILURE);
 	}
 	stream = fopen(argv[1], "r");
